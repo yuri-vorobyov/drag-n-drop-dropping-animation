@@ -30,7 +30,13 @@ function dragging(event) {
 
 function dragStop(event) {
   window.removeEventListener("mousemove", dragging);
-  box.style.removeProperty("left");
-  box.style.removeProperty("top");
   box.classList.remove("grabbed");
+  box.classList.add("flying-back");
+  box.style.left = "0px";
+  box.style.top = "0px";
+  box.addEventListener(
+    "transitionend",
+    () => box.classList.remove("flying-back"),
+    { once: true }
+  );
 }
