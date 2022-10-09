@@ -8,8 +8,13 @@ body {
 }
 
 .box {
+  position: relative;
   width: 100px;
   height: 100px;
   background-color: dodgerblue;
   cursor: pointer;
+}
+
+.grabbed {
+  cursor: grabbing;
 }
